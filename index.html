@@ -1,55 +1,35 @@
 <html>
     <head>
+        <link rel="stylesheet"  href="style.css" media="screen" />
         <title>
             Cronometro - JS Puro
         </title>
-        <style>
-            body{
-                background-color: #3b3b3b;
-                font-family: Arial;
-            }
-            button{
-                background-color: #069;
-                color: white;
-                font-size: 32px;
-                padding: 8px 20px;
-                cursor: pointer;
-                border: 0;
-            }
-
-            .container {
-                color: #f2f2f2;
-                text-align: center;
-                position: relative;
-                font-family: Arial;
-            }
-
-            .container select {
-                border-radius: 5px;
-            }
-
-        </style>
+     
     </head>
 
     <body>
         <audio id="sound" src="alarm.mp3" style="display: none;"></audio>
 
-        <div class="container">
-            <h2>Minutos</h2>
-            <select class="custom-select" id="minutos" name="minutos"></select>
+        <header>
+            <h1>Cronometro</h1>
+        </header>
+        <section class="container">
+            <div >
+                <h2>Minutos</h2>
+                <select class="custom-select" id="minutos" name="minutos"></select>
 
-            <h2>Segundos</h2>
-            <select class="custom-select" id="segundos" name="segundos"></select>
-            <br/>
-            <br/>
+                <h2>Segundos</h2>
+                <select class="custom-select" id="segundos" name="segundos"></select>
+                <br/>
+                <br/>
 
-            <button id="comecar">Começar</button>
+                <button id="comecar">Começar</button>
 
-            <div id="display">
-                <h3></h3>
-            </div><!--display-->
-        </div><!--container-->
-
+                <div id="display">
+                    <h3></h3>
+                </div><!--display-->
+            </div><!--container-->
+        </section>
         <script>
             let display = document.getElementById('display');
             let minutos = document.getElementById('minutos');
@@ -88,7 +68,7 @@
                         }    
                     }
 
-                    display.childNodes[1].innerHTML = minutoAtual + ":" + segundoAtual;
+                    display.childNodes[1].innerHTML =  minutoAtual + ":" + segundoAtual;
                 },1000)
             })
         </script>
