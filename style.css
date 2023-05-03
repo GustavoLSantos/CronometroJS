@@ -44,3 +44,25 @@ button{
     background-color: #181818;
     border-radius: 5px;
 }
+.tabela{
+    display: flex;
+    justify-content: center;
+}
+.titulo-secao{
+    border-bottom: solid thin rgb(0, 241, 12) ;
+    text-align: center;
+    padding: 8px;
+    margin-top: 32px;
+}
+table{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    color: #181818;
+    
+}
+table td{
+    border-bottom: solid thin rgb(0, 241, 12);
+    width: 200px;
+    text-align: center;
+}
