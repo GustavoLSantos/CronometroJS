@@ -2,7 +2,7 @@
     <head>
         <link rel="stylesheet"  href="style.css" media="screen" />
         <title>
-            Cronometro - JS Puro
+            Contador - JS Puro
         </title>
      
     </head>
@@ -11,7 +11,7 @@
         <audio id="sound" src="alarm.mp3" style="display: none;"></audio>
 
         <header>
-            <h1>Cronometro</h1>
+            <h1>Contador</h1>
         </header>
         <section class="container">
             <div >
@@ -30,16 +30,21 @@
                 </div><!--display-->
             </div><!--container-->
         </section>
+       
         <script>
             let display = document.getElementById('display');
             let minutos = document.getElementById('minutos');
             let segundos = document.getElementById('segundos');
             let comecar = document.getElementById('comecar');
+           
+           
 
             let cronometroSeg;
             let minutoAtual;
             let segundoAtual;
             let interval;
+
+            
 
             for(let i = 0; i <= 60;i++) {
                 minutos.innerHTML+='<option value="'+i+'"> '+i+'</option>'; 
@@ -49,11 +54,18 @@
                 segundos.innerHTML+='<option value="'+i+'">'+i+'</option>';
             }
 
+           
             comecar.addEventListener('click', function(){
+              
                 minutoAtual = minutos.value;
                 segundoAtual = segundos.value;
+                tempo = minutos.value + segundos.value;
+               
+                
 
                 display.childNodes[1].innerHTML = minutoAtual + ":" + segundoAtual;
+                
+                    
 
                 interval = setInterval(function(){
                     segundoAtual--;
@@ -64,13 +76,17 @@
                         }else{
                             document.getElementById("sound").play();
                             alert("Acabou!");
-                            clearInterval(interval);
-                        }    
+                            clearInterval(interval)
+                         
+                            
+                        }   
                     }
+                 
 
                     display.childNodes[1].innerHTML =  minutoAtual + ":" + segundoAtual;
                 },1000)
             })
+            
         </script>
 
 
